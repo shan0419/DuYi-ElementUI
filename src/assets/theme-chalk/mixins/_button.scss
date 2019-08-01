@@ -1,5 +1,23 @@
 @import "../common/var.scss";
 
+@mixin button-plain($color) {
+  color: $color;
+  background-color: mix($--color-white, $color, 90%);
+  border-color: mix($--color-white, $color, 60%);
+
+  &:hover,
+  &:focus {
+    background-color: $color;
+    border-color: $color;
+    color: $--color-white;
+  }
+
+  &:active {
+    background-color: mix($--color-black, $color, $--button-active-shade-percent);
+    border-color: mix($--color-black, $color, $--button-active-shade-percent);
+  }
+}
+
 @mixin button-variant($color, $background-color, $border-color) {
   color: $color;
   background-color: $background-color;
@@ -8,12 +26,16 @@
   &:hover,
   &:focus {
     color: $color;
-    background-color: mix($--color-white, $background-color, 20%);
-    border-color: mix($--color-white, $border-color, 20%);
+    background-color: mix($--color-white, $background-color, $--button-hover-tint-percent);
+    border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
   }
 
   &:active {
     background-color: mix($--color-black, $background-color, $--button-active-shade-percent);
     border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+  }
+
+  &.is-plain {
+    @include button-plain($background-color);
   }
 }

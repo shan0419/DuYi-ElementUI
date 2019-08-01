@@ -72,7 +72,12 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, .1) !default;
 /** Button
 -------------------------*/
 $--button-font-weight: $--font-weight-primary !default; // // 默认按钮字体加粗值
-$--button-active-shade-percent: 10%;
+$--button-active-shade-percent: 10% !default; // 点击态颜色混合百分比
+$--button-hover-tint-percent: 20% !default; // hover 颜色混合百分比
+$--button-padding-vertical: 12px !default; // 按钮 上下 padding
+$--button-padding-horizontal: 20px !default; // 按钮 左右 padding
+$--button-font-size: $--font-size-base !default; // 按钮字体大小
+$--button-border-raduius: $--border-radius-base !default; // 按扭圆角大小
 
 $--button-default-background-color: $--color-white !default; // 默认按钮背景颜色
 $--button-default-border-color: $--border-color-base !default; // 默认按钮边框颜色

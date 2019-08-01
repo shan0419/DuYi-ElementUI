@@ -3,6 +3,9 @@
     :class="[
       'el-button',
       type ? `el-button--${type}` : '',
+      {
+        'is-plain': plain
+      }
     ]"
   >
     <slot></slot>
@@ -17,6 +20,7 @@ export default {
       type: String,
       validator: val => ['primary', 'success', 'warning', 'danger', 'info', 'text'].includes(val),
     },
+    plain: Boolean,
   },
 };
 </script>
